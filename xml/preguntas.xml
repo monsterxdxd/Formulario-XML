@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- !DOCTYPE questions SYSTEM "preguntas.dtd"!-->
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='preguntas.xsd'>
+	<question id="quest001">
+		<type>select</type>
+		<title>¿Cual de las siguientes no corresponde con las siglas CSS?</title>
+		<option>Cascading Style Sheet</option>
+		<option>Concatening Style Sheet</option>
+		<option>Coworking on Style Sheet</option>
+		<answer>1</answer>
+		<answer>2</answer>
+	</question>
+</questions>
