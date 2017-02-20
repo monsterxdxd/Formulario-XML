@@ -39,7 +39,7 @@ function ponerDatosSelectHtml(title,opt){
 		var option = document.createElement("option");
 		option.text = opt[i];
 		option.value=i+1;
-		select.options.add(option);
+		select.options.add(opt);
 	}  
 }
 
