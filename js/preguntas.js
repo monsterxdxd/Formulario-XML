@@ -24,6 +24,7 @@ function gestionarXml(dadesXml){
  	var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
  	for (i = 0; i < nopt; i++) { 
     		opcionesSelect[i] = xmlDoc.getElementById("quest001").getElementsByTagName('option')[i].innerHTML;
+	 }
  }
  ponerDatosSelectHtml(tituloSelect,opcionesSelect);
  var nres = xmlDoc.getElementById("quest001").getElementsByTagName('answer').length;
@@ -41,4 +42,3 @@ function ponerDatosSelectHtml(title,options){
     select.options.add(option);
  }  
 }
-
