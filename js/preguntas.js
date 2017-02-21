@@ -23,7 +23,7 @@ function gestionarXml(dadesXml){
 	 var opcionesSelect = [];
 	 var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
 	  for (i = 0; i < nopt; i++) { 
-	    opcionesSelect[i] = xmlDoc.getElementById("profe_002").getElementsByTagName('option')[i].innerHTML;
+	    opcionesSelect[i] = xmlDoc.getElementById("quest001").getElementsByTagName('option')[i].innerHTML;
 	 }
 	 ponerDatosSelectHtml(tituloSelect,opcionesSelect);
 	 respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[0].innerHTML);
