@@ -17,19 +17,17 @@ window.onload = function(){
 // Recuperamos los datos del fichero XML xml/preguntas.xml
 function gestionarXml(dadesXml){
 	var xmlDoc = dadesXml.responseXML; 
- 	//SELECT
- 	//Recuperamos el título y las opciones, guardamos la respuesta correcta
- 	var tituloSelect=xmlDoc.getElementsByTagName("title")[0].innerHTML;
- 	var opcionesSelect = [];
- 	var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
-	for (i = 0; i < nopt; i++) { 
-			opcionesSelect[i] = xmlDoc.getElementById("quest001").getElementsByTagName('option')[i].innerHTML;
-	}
-	ponerDatosSelectHtml(tituloSelect,opcionesSelect);
-	var nres = xmlDoc.getElementById("quest001").getElementsByTagName('answer').length;
-	for (i = 0; i < nres; i++) { 
-		respuestasSelect[i]=xmlDoc.getElementById("quest001").getElementsByTagName("answer")[i].innerHTML;
-	}
+	 //SELECT
+	 //Recuperamos el título y las opciones, guardamos la respuesta correcta
+	 var tituloSelect=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+	 var opcionesSelect = [];
+	 var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
+	  for (i = 0; i < nopt; i++) { 
+	    opcionesSelect[i] = xmlDoc.getElementById("profe_002").getElementsByTagName('option')[i].innerHTML;
+	 }
+	 ponerDatosSelectHtml(tituloSelect,opcionesSelect);
+	 respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[0].innerHTML);
+
 }
 		
 function ponerDatosSelectHtml(title,opt){
