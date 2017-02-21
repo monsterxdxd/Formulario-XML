@@ -32,7 +32,7 @@ function gestionarXml(dadesXml){
 		
 function ponerDatosSelectHtml(title,opt){
 	document.getElementById("firstQuestion").innerHTML=title;
-	var select = document.getElementsByTagName("select");
+	var select = document.getElementById("sel");
 	for (i = 0; i < opt.length; i++) { 
 		var option = document.createElement("option");
 		option.text = opt[i];
