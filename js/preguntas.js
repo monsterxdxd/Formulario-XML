@@ -19,7 +19,7 @@ function gestionarXml(dadesXml){
 	var xmlDoc = dadesXml.responseXML; 
 	 //SELECT
 	 //Recuperamos el título y las opciones, guardamos la respuesta correcta
-	 var tituloSelect=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+	 var tituloSelect=xmlDoc.getElementsByTagName("title")[0].innerHTML;
 	 var opcionesSelect = [];
 	 var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
 	  for (i = 0; i < nopt; i++) { 
