@@ -1,5 +1,5 @@
 var formElement=null;
-var respuestasSelect=[];
+var respuestasSelect=null;
 
 window.onload = function(){ 
 
