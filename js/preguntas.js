@@ -15,39 +15,38 @@ window.onload = function(){
 }
 
 // Recuperamos los datos del fichero XML xml/preguntas.xml
-function gestionarXml(dadesXml){
-	var xmlDoc = dadesXml.responseXML; 
- 	//SELECT
- 	//Recuperamos el título y las opciones, guardamos la respuesta correcta
- 	var tituloSelect=xmlDoc.getElementsByTagName("title")[0].innerHTML;
- 	var opcionesSelect = [];
- 	var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
-  	for (i = 0; i < nopt; i++) { 
-    		opcionesSelect[i] = xmlDoc.getElementById("quest001").getElementsByTagName('option')[i].innerHTML;
- 	}
- 	ponerDatosSelectHtml(tituloSelect,opcionesSelect);
- 	respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].innerHTML);
-
+	function gestionarXml(dadesXml){
+		var xmlDoc = dadesXml.responseXML; 
+		 //CHECKBOX
+		//Recuperamos el título y las opciones, guardamos las respuestas correctas
+		var tituloCheckbox = xmlDoc.getElementsByTagName("title")[0].innerHTML;
+		var opcionesCheckbox = [];
+		var nopt = xmlDoc.getElementById("quest001").getElementsByTagName('option').length;
+		for (i = 0; i < nopt; i++) { 
+			opcionesCheckbox[i]=xmlDoc.getElementById("quest001").getElementsByTagName('option')[i].innerHTML;
+		}  
+		ponerDatosCheckboxHtml(tituloCheckbox,opcionesCheckbox);
+		var nres = xmlDoc.getElementById("quest001").getElementsByTagName('answer').length;
+		for (i = 0; i < nres; i++) { 
+			respuestasCheckbox[i]=xmlDoc.getElementById("quest001").getElementsByTagName("answer")[i].innerHTML;
+		}
+	}
 }
 		
-function ponerDatosSelectHtml(title,opt){
-	document.getElementById("firstQuestion").innerHTML=title;
-	var select = document.getElementsByTagName("select")[0];
-	for (i = 0; i < opt.length; i++) { 
-		var option = document.createElement("option");
-		option.text = opt[i];
-		option.value=i+1;
-		select.options.add(opt);
-	}
-}  
-function ponerDatosSelectHtml(t,opt){
-	document.getElementById("firstQuestion").innerHTML=t;
-  	var select = document.getElementsByTagName("select")[0];
-  	for (i = 0; i < opt.length; i++) { 
-    		var option = document.createElement("option");
-    		option.text = opt[i];
-    		option.value=i+1;
-    		select.options.add(option);
- 	}  
+function ponerDatosCheckboxHtml(t,opt){
+ var checkboxContainer=document.getElementById('checkboxDiv');
+ document.getElementById('tituloCheckbox').innerHTML = t;
+ for (i = 0; i < opt.length; i++) { 
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+    label.innerHTML=opt[i];
+    label.setAttribute("for", "color_"+i);
+    input.type="checkbox";
+    input.name="color";
+    input.id="color_"+i;;    
+    checkboxContainer.appendChild(input);
+    checkboxContainer.appendChild(label);
+    checkboxContainer.appendChild(document.createElement("br"));
+ }  
 }
 
