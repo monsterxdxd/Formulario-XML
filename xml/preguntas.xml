@@ -2,6 +2,7 @@
 <!-- !DOCTYPE questions SYSTEM "preguntas.dtd"!-->
 <questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='preguntas.xsd'>
 	<question id="quest001">
+<<<<<<< HEAD
 		<type>text</type>
 		<title>¿Cual es el protocolo de seguridad utilizado en las paginas web?</title>
 		<answer>https</answer>
@@ -13,6 +14,14 @@
 		<option>Concatening Style Sheet</option>
 		<option>Coworking on Style Sheet</option>
 		<answer>0</answer>
+=======
+		<type>checkbox</type>
+		<title>¿Cómo se declara correctamente una variable en JavaScript?</title>
+		<option>A) nuevaVariable = true</option>
+		<option>B) public boolean nuevaVariable = true;</option>
+		<option>C) var nuevaVariable = true;</option>
+		<answer>2</answer>
+>>>>>>> 9db24b8de3d53f7a783a09f24dd42ecb0be48feb
 	</question>
 	<question id="quest003">
 		<type>checkbox</type>
