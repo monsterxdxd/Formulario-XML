@@ -8,10 +8,9 @@
 * __HTML__ Donde se encuentra la estructura base del proyecto.
 
 
-El proyecto consiste en un formulário web que utiliza un XML donde se almacena la información, y mediante html/js utilizamos la información
-del XML para realizar una serie de preguntas y permitir al usuario realizar un cuestionario y obtener una puntuación. 
+El proyecto consiste en un formulário web que permite al usuario realizar una série de preguntas y obtener una puntuación. 
 
-El formulário debe contener __10 preguntas__de los siguientes tipos:
+El formulário debe contener __10 preguntas__ de los siguientes tipos:
 
 * Dos preguntas tipo TEXT.
 * Dos preguntas tipo SELECT.
