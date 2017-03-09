@@ -64,6 +64,11 @@ window.onload = function(){
 		el.parentNode.parentNode.replaceChild(select, el.parentNode);
 	    }
 	}
+
+	document.getElementById("respuestas").onclick = function(){
+		document.getElementById("resultadoTotal").style.display = "none";
+		document.getElementById("resultadosDiv").style.display = "block";
+	}
 }
 //*******************************************************************************************************************************
 
@@ -473,7 +478,7 @@ function ponerDatosRadio(t,opt){
 		label.setAttribute("for", "rd_"+i);
 		input.type="radio";
 		input.name="rd";
-		input.id="rd_"+i;;    
+		input.id="rd_"+i;   
 		radioContainer.appendChild(input);
 		radioContainer.appendChild(label);
 		radioContainer.appendChild(document.createElement("br"));
@@ -522,18 +527,31 @@ function ponerDatosMultipleSelectHtml2(t,opt){
 //*******************************************************************************************************************************
 //Gestionar la presentación de las respuestas
 function darRespuestaHtml(r){
-	document.getElementById("myform").style.display = "none";
-	document.getElementById("resultadosDiv").style.display = "block";
 	var p = document.createElement("p");
 	var node = document.createTextNode(r);
 	p.appendChild(node);
 	document.getElementById('resultadosDiv').appendChild(p);
 }
+function darRespuestaTotal(r){
+	document.getElementById("myform").style.display = "none";
+	document.getElementById("resultadoTotal").style.display = "block";
+	var p = document.createElement("p");
+	var p2 = document.getElementById("respuestas");
+	p.id="total";
+	p2.id="respuestas";  
+	var node = document.createTextNode(r);
+	var node2= document.createTextNode("Para puntuación detallada, pulsa aquí:");
+	p.appendChild(node);
+	p2.appendChild(node2);
+	document.getElementById('resultadoTotal').appendChild(p);
+	document.getElementById('resultadoTotal').appendChild(p2);
+
+}
 function tituloCorreccion(){
 	darRespuestaHtml("Puntuaci\u00F3n obtenida por pregunta:");
 }
 function presentarNota(){
-	darRespuestaHtml("Total: "+nota.toFixed(2)+" puntos sobre 10");
+	darRespuestaTotal("Puntuación total: "+nota.toFixed(2));
 }
 //	inicializar la corrección
 function inicializar(){
