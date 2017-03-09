@@ -1,0 +1,96 @@
+body,html{
+	margin:0px
+}
+body{
+
+	background-color:#e0f2f1;
+
+}
+body,input,select,label{
+	font-size:3vw
+}
+h3{
+	color:#00ACC1;
+	font-size:3vw;
+}
+select{
+	width:50%;
+}
+input[type=checkbox]{
+	width:5%;
+	zoom:1.5
+}
+input[type=text]{
+	background-color: #e0f2f1;
+}
+input[type=submit]{
+	margin:5%;
+	margin-left: 30%;
+	width: 35%;
+	font-family: sans-serif ;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #4FC3F7;
+	color: #E3F2FD;
+	cursor: pointer;
+
+}
+form{
+	border-radius: 10px 10px 10px 10px;
+	margin-top: 1%;
+	margin-bottom:1%;
+	margin-left:1%;
+	margin-right:1%;
+	background-color:#F8F8FF;
+	padding:3%;
+	font-family: sans-serif ;
+}
+#resultadosDiv {
+	position: relative;
+	margin: 3%;
+	background: #00838F;
+	text-align: center;	
+	color: #B2EBF2;
+	border-radius: 10px 10px 10px 10px;
+	font-family: sans-serif ;
+	font-size: 4vw;
+}
+#resultadoTotal {
+	width: 50%;
+	position: relative;
+	margin-left: 25%;
+	background: #00838F;
+	text-align: center;	
+	color: #B2EBF2;
+	border-radius: 10px 10px 10px 10px;
+	font-family: sans-serif ;
+}
+#total{
+	font-size: 5vw;
+}
+#respuestas{
+	cursor: pointer;
+}
+#cabecera{
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+    align-content: center;
+	height: 45%;
+	background-color: #AFEEEE;	
+	margin: 1%;
+	font-family: sans-serif ;
+}
+#logo{
+	width: 30%;
+}
+#titulo{
+	float: right;
+	width: 70%;
+    margin-top: 10%;
+	text-align: center;	
+	font-family: sans-serif;
+	font-size: 5vw;
+	color: #00838F;
+}
+
+	
+
