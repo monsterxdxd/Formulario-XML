@@ -7,11 +7,11 @@ body{
 
 }
 body,input,select,label{
-	font-size:5vw
+	font-size:4vw
 }
 h3{
 	color:#00ACC1;
-	font-size:5vw;
+	font-size:4.5vw;
 }
 select{
 	width:50%;
@@ -56,6 +56,7 @@ form{
 	width: 80%;
 	position: relative;
 	margin: 10%;
+	margin-top: 20%;
 	background: #00838F;
 	text-align: center;	
 	color: #B2EBF2;
