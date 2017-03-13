@@ -23,12 +23,20 @@ window.onload = function(){
 			corregirSelect("sel", respuestaSelect, "2ª");
 			corregirCheckbox("checkboxDiv", respuestasCheckbox, "3ª");
 			corregirRadio("radioDiv", respuestaRadio, "4ª");
+<<<<<<< HEAD
 			corregirMultiple("selectMultiple", respuestasMultiple, "5ª");
+=======
+			corregirMultiple();
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 			corregirText("text2", respuestaInput2, "6ª");
 			corregirSelect("sel2", respuestaSelect2, "7ª");
 			corregirCheckbox("checkboxDiv2", respuestasCheckbox2, "8ª");
 			corregirRadio("radioDiv2", respuestaRadio2,"9ª");
+<<<<<<< HEAD
 			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª");
+=======
+			corregirMultiple2();
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 			presentarNota();
 			//}
 		return false;
@@ -159,7 +167,11 @@ function gestionarXml(dadesXml){
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[4].innerHTML;
 	var opcionesSelectMultiple = [];
 	var idSel = "selectMultiple";
+<<<<<<< HEAD
 	idPregunta = "tituloMultiple";
+=======
+	idPregunta = "tituloSelectMultiple";
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 	var nopt = xmlDoc.getElementById("quest005").getElementsByTagName('option').length;
 	for (i = 0; i < nopt; i++) { 
 		opcionesSelectMultiple[i] = xmlDoc.getElementById("quest005").getElementsByTagName('option')[i].innerHTML;
@@ -174,7 +186,11 @@ function gestionarXml(dadesXml){
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[9].innerHTML;
 	var opcionesSelectMultiple2 = [];
 	idSel = "selectMultiple2";
+<<<<<<< HEAD
 	idPregunta = "tituloMultiple2";
+=======
+	idPregunta = "tituloSelectMultiple2";
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 	var nopt = xmlDoc.getElementById("quest010").getElementsByTagName('option').length;
 	for (i = 0; i < nopt; i++) { 
 		opcionesSelectMultiple2[i] = xmlDoc.getElementById("quest010").getElementsByTagName('option')[i].innerHTML;
@@ -249,7 +265,12 @@ function corregirRadio(id, respuesta, numPreg){
 	} else darRespuestaHtml(numPreg + "4ª pregunta: " + notaRadio + " punto")
 }
 //**********	CORECCION MULTIPLE	**********
+<<<<<<< HEAD
 function corregirMultiple(id, respuestas, numPreg){
+=======
+function corregirMultiple(){
+	var f = formElement;
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 	var escorrecta = [];
 	var multiple = document.getElementById(id);
 	var puntuacion = 0;
@@ -272,6 +293,34 @@ function corregirMultiple(id, respuestas, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
 	}else darRespuestaHtml(numPreg + " pregunta: 1 punto")
 }
+<<<<<<< HEAD
+=======
+function corregirMultiple2(){
+	var f = formElement;
+	var escorrecta = [];
+	var multiple = document.getElementById("selectMultiple2");
+	var puntuacion = 0;
+	for (var i = 0; i<multiple.options.length; i ++){
+		if (multiple.options[i].selected){
+			for (var j = 0; j<respuestasMultiple2.length; j++){
+				if (multiple.options[i].value == respuestasMultiple2[j]){
+					escorrecta.push(multiple.options[i].value);
+				}
+			}
+		}
+	}
+	if (escorrecta.length > 0){
+		puntuacion = escorrecta.length / respuestasMultiple2.length;
+		nota += puntuacion;
+	}
+	if (puntuacion != 1 & puntuacion != 0){
+		darRespuestaHtml("10ª pregunta: " + puntuacion.toFixed(1) + " puntos")
+	} else if (puntuacion == 0){
+		darRespuestaHtml("10ª pregunta: 0 puntos");
+	}else darRespuestaHtml("10ª pregunta: 1 punto")
+}
+
+>>>>>>> 61309e36944976701b2502cee776a7762c8d39ec
 
 //*******************************************************************************************************************************
 //***************		poner los datos recibios en el HTML		***************
