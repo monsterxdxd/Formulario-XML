@@ -9,7 +9,6 @@ var respuestaRadio = null;
 var respuestaRadio2 = null;
 var respuestasMultiple=[];
 var respuestasMultiple2=[];
-
 var nota = 0;
 
 //*******************************************************************************************************************************
@@ -70,7 +69,6 @@ window.onload = function(){
 
 function gestionarXml(dadesXml){
 	var xmlDoc = dadesXml.responseXML;
-
 
 
 	//**********	TEXT	**********
@@ -185,8 +183,6 @@ function gestionarXml(dadesXml){
 		respuestasMultiple2[i]=xmlDoc.getElementById("quest010").getElementsByTagName("answer")[i].innerHTML;
 	}
 }
-
-
 //****************************************************************************************************
 //implementación de la corrección
 function corregirText(id, respuesta, numPreg){
@@ -200,7 +196,7 @@ function corregirText(id, respuesta, numPreg){
 }
 function corregirSelect(id, respuesta, numPreg){
 	var sel = document.getElementById(id); 
-	if (sel.selectedIndex-1==respuesta) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+	if (sel.selectedIndex-1==respuesta) {
 		darRespuestaHtml(numPreg + " pregunta: 1 punto");
 		nota +=1;
 	} else darRespuestaHtml(numPreg + " pregunta: 0 puntos");
@@ -248,7 +244,6 @@ function corregirRadio(id, respuesta, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: " + notaRadio + " puntos")
 	} else darRespuestaHtml(numPreg + "4ª pregunta: " + notaRadio + " punto")
 }
-//**********	CORECCION MULTIPLE	**********
 function corregirMultiple(id, respuestas, numPreg){
 	var escorrecta = [];
 	var multiple = document.getElementById(id);
@@ -272,10 +267,8 @@ function corregirMultiple(id, respuestas, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
 	}else darRespuestaHtml(numPreg + " pregunta: 1 punto")
 }
-
 //*******************************************************************************************************************************
 //***************		poner los datos recibios en el HTML		***************
-
 function ponerDatosInputHtml(title, id){
 	document.getElementById(id).innerHTML = title;
 }
@@ -372,8 +365,7 @@ function inicializar(){
 	document.getElementById('resultadosDiv').innerHTML = "";
 	nota=0.0;
 }
-
-
+//*******************************************************************************************************************************
 //Comprobar que se han introducido datos en el formulario
 function comprobar(){
 	var f=formElement;
