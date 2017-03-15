@@ -44,7 +44,7 @@
 	</question>
 	<question id="quest006">
 		<type>text</type>
-		<title>¿Que parametro permite modificar la altura de los elementos mediante css?</title>
+		<title>¿Que parámetro permite modificar la altura de los elementos mediante css?</title>
 		<answer>height</answer>
 	</question>
 	<question id="quest007">
