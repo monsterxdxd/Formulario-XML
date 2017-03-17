@@ -1,4 +1,4 @@
-###DESCRIPCIÓN DEL PROYECTO
+### DESCRIPCIÓN DEL PROYECTO
 
 El proyecto consiste en un formulário web que permite al usuario realizar una série de preguntas y obtener una puntuación. 
 
