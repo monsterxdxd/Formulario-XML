@@ -45,9 +45,9 @@ form{
 	font-family: sans-serif ;
 }
 #resultadosDiv {
-	width: 50%;
+	width: 80%;
 	position: relative;
-	margin-left: 25%;
+	margin-left: 10%;
 	background: #00838F;
 	text-align: center;	
 	color: #B2EBF2;
@@ -56,11 +56,9 @@ form{
 	font-size: 1.5vw;
 }
 #resultadoTotal {
-	width: 50%;
-	position: relative;
-	margin-left: 25%;
+	width: 90%;
+	margin: 5%;
 	background: #00838F;
-	text-align: center;	
 	color: #B2EBF2;
 	border-radius: 10px 10px 10px 10px;
 	font-family: sans-serif ;
@@ -68,7 +66,7 @@ form{
 #total{
 	font-size: 5vw;
 }
-#respuestas{
+#respuestasDetalladas{
 	cursor: pointer;
 }
 #cabecera{
