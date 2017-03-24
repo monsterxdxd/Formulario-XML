@@ -6,38 +6,77 @@
 <html>
 <head>
 <style rel="stylesheet" type="text/css">
-table{width:100%;border:1px solid;}
-td,tr,th{border:1px solid;padding:2px;vertical-align:top}
+body{background-color:#B2EBF2;}
+h1{margin-left:10%;color:#00838F;margin-top:2%;}
+table{width:80%;margin-left:10%;border-radius:10px 10px 10px 10px;border:1px solid;color:#B2EBF2}
+th{background-color:#00838F;color:#E0F7FA;}
+td{background-color:#00ACC1;}
+td,tr,th{border-radius:12px 12px 12px 12px;border:2px solid;border-color:#B2EBF2;padding:2px;vertical-align:top}
 span{color:green;padding-left:5px}
 #x{color:red}
 </style>
 </head>
 <body>
-  <h2>Questions</h2>
-  <table border="1">
+  <h1>Corrección</h1>
+  <table>
     <tr>
-      <th>Title</th>
-      <th>Option</th>
-      <th>Answer</th>
+      <th>Pregunta</th>
+      <th>Opción</th>
+      <th>Respuesta</th>
     </tr>
-    <xsl:for-each select="questions/question">
+    <xsl:for-each select="questions/question">      
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td>
+       <xsl:for-each select="answer">
+        <xsl:choose>
+         <xsl:when test="../type = 'text'">
+          <span><xsl:value-of select="text()"/></span>
+         </xsl:when>
+        </xsl:choose>         
+       </xsl:for-each>
        <xsl:for-each select="option">
-        <xsl:value-of select="position()"/>: <xsl:value-of select="text()"/><br/>
+         <xsl:variable name="optposition" select="position()-1"/>
+        O<xsl:value-of select="$optposition+1"/>: <xsl:value-of select="text()"/>
+         <xsl:for-each select="../answer">
+          <xsl:variable name="correctanswer" select="text()"/>
+          <xsl:if test="$optposition=$correctanswer">
+            <span>&#x2713;</span>
+          </xsl:if>
+         </xsl:for-each><br/><br/>
        </xsl:for-each>
       </td>
       <td>
-       <xsl:for-each select="answer">
-        <xsl:value-of select="text()"/><br/>
+       <xsl:for-each select="useranswer">
+        <xsl:variable name="useranswer" select="text()"/>
+        <xsl:value-of select="text()"/>
+        <xsl:for-each select="../answer">
+          <xsl:choose>
+           <xsl:when test="../type = 'text'">
+            <xsl:variable name="correctanswertext" select="text()"/>
+            <xsl:if test="$useranswer=$correctanswertext">
+              <span>&#x2713;</span>
+            </xsl:if>
+           </xsl:when>
+           <xsl:otherwise>
+            <xsl:variable name="correctanswer" select="text()+1"/>
+           <xsl:if test="$useranswer=$correctanswer">
+              <span>&#x2713;</span>
+            </xsl:if>
+           </xsl:otherwise>
+          </xsl:choose>
+         </xsl:for-each>
+         <!--<xsl:if test="$count=1">
+           <span id='x'>&#x2715;</span>
+         </xsl:if> -->
+         <br/><br/>
        </xsl:for-each>       
-      </td>
+     </td>
     </tr>
     </xsl:for-each>
   </table>
-</body>
-</html>
+ </body>
+ </html>
 </xsl:template>
 
 </xsl:stylesheet>
