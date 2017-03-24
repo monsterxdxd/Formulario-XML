@@ -6,7 +6,7 @@
 <html>
 <head>
 <style rel="stylesheet" type="text/css">
-body{background-color:#B2EBF2;}
+body{background-color:#B2EBF2;font-size: 1.3vw;}
 h1{margin-left:10%;color:#00838F;margin-top:2%;}
 table{width:80%;margin-left:10%;border-radius:10px 10px 10px 10px;border:1px solid;color:#B2EBF2}
 th{background-color:#00838F;color:#E0F7FA;}
