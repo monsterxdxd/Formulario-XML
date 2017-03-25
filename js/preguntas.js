@@ -16,7 +16,7 @@ window.onload = function(){
 	formElement=document.getElementById('myform');
 	formElement.onsubmit=function(){
 		inicializar();
-		//if (comprobar()){
+		if (comprobar()){
 			tituloCorreccion();
 			corregirText("text", respuestaInput, "1ª");
 			corregirSelect("sel", respuestaSelect, "2ª");
@@ -29,7 +29,7 @@ window.onload = function(){
 			corregirRadio("radioDiv2", respuestaRadio2,"9ª");
 			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª");
 			presentarNota();
-		//}
+		}
 		return false;
 	}
 
