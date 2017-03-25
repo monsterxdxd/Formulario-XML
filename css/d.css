@@ -104,9 +104,15 @@ td{
 }
 td,tr,th{
 	border-radius:12px 12px 12px 12px;
+<<<<<<< HEAD
 	border:5px solid;
 	border-color:#e0f2f1;
 	padding:8px;
+=======
+	border:2px solid;
+	border-color:#e0f2f1;
+	padding:2px;
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	vertical-align:top
 }
 th{

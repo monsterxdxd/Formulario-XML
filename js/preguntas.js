@@ -19,6 +19,7 @@ window.onload = function(){
 		inicializar();
 		//if (comprobar()){
 			tituloCorreccion();
+<<<<<<< HEAD
 			corregirText("text", respuestaInput, "1ª","quest001");
 			corregirSelect("sel", respuestaSelect, "2ª", "quest002");
 			corregirCheckbox("checkboxDiv", respuestasCheckbox, "3ª", "quest003");
@@ -29,6 +30,18 @@ window.onload = function(){
 			corregirCheckbox("checkboxDiv2", respuestasCheckbox2, "8ª", "quest008");
 			corregirRadio("radioDiv2", respuestaRadio2,"9ª", "quest009");
 			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª", "quest010");
+=======
+			corregirText("text", respuestaInput, "1ª");
+			corregirSelect("sel", respuestaSelect, "2ª");
+			corregirCheckbox("checkboxDiv", respuestasCheckbox, "3ª");
+			corregirRadio("radioDiv", respuestaRadio, "4ª");
+			corregirMultiple("selectMultiple", respuestasMultiple, "5ª");
+			corregirText("text2", respuestaInput2, "6ª");
+			corregirSelect("sel2", respuestaSelect2, "7ª");
+			corregirCheckbox("checkboxDiv2", respuestasCheckbox2, "8ª");
+			corregirRadio("radioDiv2", respuestaRadio2,"9ª");
+			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª");
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 			presentarNota();
 		//}
 		return false;
@@ -189,7 +202,11 @@ function gestionarXml(dadesXml){
 //****************************************************************************************************
 //							implementación de la corrección
 //****************************************************************************************************
+<<<<<<< HEAD
 function corregirText(id, respuesta, numPreg, idPreg){
+=======
+function corregirText(id, respuesta, numPreg){
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var s=document.getElementById(id).value;     
 	if (s.toLowerCase()==respuesta) {
 		darRespuestaHtml(numPreg + " pregunta: 1 punto");
@@ -197,16 +214,22 @@ function corregirText(id, respuesta, numPreg, idPreg){
 	}else {
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
 	}
+<<<<<<< HEAD
 	var useranswer = xmlDoc.createElement("useranswer");   
 	useranswer.innerHTML = s;
 	xmlDoc.getElementById(idPreg).appendChild(useranswer);
 }
 function corregirSelect(id, respuesta, numPreg, idPreg){
+=======
+}
+function corregirSelect(id, respuesta, numPreg){
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var sel = document.getElementById(id); 
 	if (sel.selectedIndex-1==respuesta) {
 		darRespuestaHtml(numPreg + " pregunta: 1 punto");
 		nota +=1;
 	} else darRespuestaHtml(numPreg + " pregunta: 0 puntos");
+<<<<<<< HEAD
 	var useranswer = xmlDoc.createElement("useranswer");   
 	useranswer.innerHTML = sel.selectedIndex;
 	xmlDoc.getElementById(idPreg).appendChild(useranswer);
@@ -220,6 +243,15 @@ function corregirCheckbox(id, respuestas,numPreg, idPreg){
 			var useranswer = xmlDoc.createElement("useranswer");   
 			useranswer.innerHTML = i+1;
 			xmlDoc.getElementById(idPreg).appendChild(useranswer);
+=======
+}
+function corregirCheckbox(idPreg, respuestas,numPreg){
+	var notaCheckbox = 0;
+	var escorrecta = [];
+	var inputs = document.getElementById(idPreg).getElementsByTagName("input");
+	for (i = 0; i < inputs.length; i++) {  
+		if (inputs[i].checked) {
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 			escorrecta[i]=false;     
 			for (j = 0; j < respuestas.length; j++) {
 				if (i==respuestas[j]) escorrecta[i]=true;
@@ -236,16 +268,25 @@ function corregirCheckbox(id, respuestas,numPreg, idPreg){
 	if (notaCheckbox != 1){
 		darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " puntos")
 	} else darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " punto")
+<<<<<<< HEAD
 }
 function corregirRadio(id, respuesta, numPreg, idPreg){
+=======
+	
+}
+function corregirRadio(id, respuesta, numPreg){
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var notaRadio = 0;
 	var input = document.getElementById(id).getElementsByTagName("input");
 	var escorrecta = null;
 	for (i = 0; i < input.length; i++) {  //"rd" es el nombre asignado a todos los radio.
 		if (input[i].checked) {
+<<<<<<< HEAD
 			var useranswer = xmlDoc.createElement("useranswer");   
 			useranswer.innerHTML = i+1;
 			xmlDoc.getElementById(idPreg).appendChild(useranswer);
+=======
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 			escorrecta=false;   
 			if (i==respuesta) escorrecta=true;
 			//si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
@@ -259,15 +300,22 @@ function corregirRadio(id, respuesta, numPreg, idPreg){
 		darRespuestaHtml(numPreg + " pregunta: " + notaRadio + " puntos")
 	} else darRespuestaHtml(numPreg + " pregunta: " + notaRadio + " punto")
 }
+<<<<<<< HEAD
 function corregirMultiple(id, respuestas, numPreg, idPreg){
+=======
+function corregirMultiple(id, respuestas, numPreg){
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var escorrecta = [];
 	var multiple = document.getElementById(id);
 	var puntuacion = 0;
 	for (var i = 0; i<multiple.options.length; i ++){
 		if (multiple.options[i].selected){
+<<<<<<< HEAD
 			var useranswer = xmlDoc.createElement("useranswer");   
 			useranswer.innerHTML = i+1;
 			xmlDoc.getElementById(idPreg).appendChild(useranswer);
+=======
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 			for (var j = 0; j<respuestas.length; j++){
 				if (multiple.options[i].value == respuestas[j]){
 					escorrecta.push(multiple.options[i].value);
@@ -283,7 +331,11 @@ function corregirMultiple(id, respuestas, numPreg, idPreg){
 		darRespuestaHtml(numPreg + " pregunta: " + puntuacion.toFixed(1) + " puntos")
 	} else if (puntuacion == 0){
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
+<<<<<<< HEAD
 	}else darRespuestaHtml(numPreg + " pregunta: 1 punto");
+=======
+	}else darRespuestaHtml(numPreg + " pregunta: 1 punto")
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 }
 //****************************************************************************************************
 //							poner los datos recibios en el HTML	
@@ -429,7 +481,11 @@ function comprobar(){
 		return false;
 	} else if (document.getElementById("selectMultiple").selectedIndex == -1){
 		alert("Responde la 5ª pregunta");
+<<<<<<< HEAD
 		document.getElementById("tituloMultiple").scrollIntoView();
+=======
+		document.getElementById("selectMultiple").scrollIntoView();
+>>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 		return false;
 	} else 	if (document.getElementById("text2").value == "") {
 		document.getElementById("text2").focus();
