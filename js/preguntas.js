@@ -11,7 +11,6 @@ var respuestasMultiple=[];
 var respuestasMultiple2=[];
 var nota = 0;
 var xmlDoc = null;
-var xslDoc = null;
 
 window.onload = function(){ 
 	formElement=document.getElementById('myform');
@@ -19,18 +18,6 @@ window.onload = function(){
 		inicializar();
 		//if (comprobar()){
 			tituloCorreccion();
-<<<<<<< HEAD
-			corregirText("text", respuestaInput, "1ª","quest001");
-			corregirSelect("sel", respuestaSelect, "2ª", "quest002");
-			corregirCheckbox("checkboxDiv", respuestasCheckbox, "3ª", "quest003");
-			corregirRadio("radioDiv", respuestaRadio, "4ª", "quest004");
-			corregirMultiple("selectMultiple", respuestasMultiple, "5ª", "quest005");
-			corregirText("text2", respuestaInput2, "6ª","quest006");
-			corregirSelect("sel2", respuestaSelect2, "7ª", "quest007");
-			corregirCheckbox("checkboxDiv2", respuestasCheckbox2, "8ª", "quest008");
-			corregirRadio("radioDiv2", respuestaRadio2,"9ª", "quest009");
-			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª", "quest010");
-=======
 			corregirText("text", respuestaInput, "1ª");
 			corregirSelect("sel", respuestaSelect, "2ª");
 			corregirCheckbox("checkboxDiv", respuestasCheckbox, "3ª");
@@ -41,7 +28,6 @@ window.onload = function(){
 			corregirCheckbox("checkboxDiv2", respuestasCheckbox2, "8ª");
 			corregirRadio("radioDiv2", respuestaRadio2,"9ª");
 			corregirMultiple("selectMultiple2", respuestasMultiple2, "10ª");
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 			presentarNota();
 		//}
 		return false;
@@ -54,18 +40,8 @@ window.onload = function(){
 			gestionarXml(this);
 		}
 	};
-	xhttp.open("GET", "xml/questions.xml", true);
+	xhttp.open("GET", "xml/preguntas.xml", true);
  	xhttp.send();
-
-	//LEER XSL de xml/questions.xml
-	var xhttp2 = new XMLHttpRequest();
-	xhttp2.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			xslDoc=this.responseXML;
-		}
-	};
-	xhttp2.open("GET", "xml/questions.xsl", true);
-	xhttp2.send();
 
 	//Funcion para no tener que usar el control en las preguntas de multiple select
 	window.onmousedown = function (e) {
@@ -202,11 +178,8 @@ function gestionarXml(dadesXml){
 //****************************************************************************************************
 //							implementación de la corrección
 //****************************************************************************************************
-<<<<<<< HEAD
-function corregirText(id, respuesta, numPreg, idPreg){
-=======
+
 function corregirText(id, respuesta, numPreg){
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var s=document.getElementById(id).value;     
 	if (s.toLowerCase()==respuesta) {
 		darRespuestaHtml(numPreg + " pregunta: 1 punto");
@@ -214,44 +187,20 @@ function corregirText(id, respuesta, numPreg){
 	}else {
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
 	}
-<<<<<<< HEAD
-	var useranswer = xmlDoc.createElement("useranswer");   
-	useranswer.innerHTML = s;
-	xmlDoc.getElementById(idPreg).appendChild(useranswer);
-}
-function corregirSelect(id, respuesta, numPreg, idPreg){
-=======
 }
 function corregirSelect(id, respuesta, numPreg){
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var sel = document.getElementById(id); 
 	if (sel.selectedIndex-1==respuesta) {
 		darRespuestaHtml(numPreg + " pregunta: 1 punto");
 		nota +=1;
 	} else darRespuestaHtml(numPreg + " pregunta: 0 puntos");
-<<<<<<< HEAD
-	var useranswer = xmlDoc.createElement("useranswer");   
-	useranswer.innerHTML = sel.selectedIndex;
-	xmlDoc.getElementById(idPreg).appendChild(useranswer);
 }
-function corregirCheckbox(id, respuestas,numPreg, idPreg){
+function corregirCheckbox(id, respuestas,numPreg){
 	var notaCheckbox = 0;
 	var escorrecta = [];
 	var inputs = document.getElementById(id).getElementsByTagName("input");
 	for (i = 0; i < inputs.length; i++) {  
-		if (inputs[i].checked) {
-			var useranswer = xmlDoc.createElement("useranswer");   
-			useranswer.innerHTML = i+1;
-			xmlDoc.getElementById(idPreg).appendChild(useranswer);
-=======
-}
-function corregirCheckbox(idPreg, respuestas,numPreg){
-	var notaCheckbox = 0;
-	var escorrecta = [];
-	var inputs = document.getElementById(idPreg).getElementsByTagName("input");
-	for (i = 0; i < inputs.length; i++) {  
-		if (inputs[i].checked) {
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
+		if(inputs[i].checked) {
 			escorrecta[i]=false;     
 			for (j = 0; j < respuestas.length; j++) {
 				if (i==respuestas[j]) escorrecta[i]=true;
@@ -266,27 +215,15 @@ function corregirCheckbox(idPreg, respuestas,numPreg){
 		}
 	}
 	if (notaCheckbox != 1){
-		darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " puntos")
-	} else darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " punto")
-<<<<<<< HEAD
-}
-function corregirRadio(id, respuesta, numPreg, idPreg){
-=======
-	
+		darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " puntos");
+	} else darRespuestaHtml(numPreg + " pregunta: " + notaCheckbox + " punto");
 }
 function corregirRadio(id, respuesta, numPreg){
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var notaRadio = 0;
 	var input = document.getElementById(id).getElementsByTagName("input");
 	var escorrecta = null;
 	for (i = 0; i < input.length; i++) {  //"rd" es el nombre asignado a todos los radio.
-		if (input[i].checked) {
-<<<<<<< HEAD
-			var useranswer = xmlDoc.createElement("useranswer");   
-			useranswer.innerHTML = i+1;
-			xmlDoc.getElementById(idPreg).appendChild(useranswer);
-=======
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
+		if(input[i].checked) {
 			escorrecta=false;   
 			if (i==respuesta) escorrecta=true;
 			//si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
@@ -300,24 +237,15 @@ function corregirRadio(id, respuesta, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: " + notaRadio + " puntos")
 	} else darRespuestaHtml(numPreg + " pregunta: " + notaRadio + " punto")
 }
-<<<<<<< HEAD
-function corregirMultiple(id, respuestas, numPreg, idPreg){
-=======
+
 function corregirMultiple(id, respuestas, numPreg){
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 	var escorrecta = [];
 	var multiple = document.getElementById(id);
 	var puntuacion = 0;
 	for (var i = 0; i<multiple.options.length; i ++){
-		if (multiple.options[i].selected){
-<<<<<<< HEAD
-			var useranswer = xmlDoc.createElement("useranswer");   
-			useranswer.innerHTML = i+1;
-			xmlDoc.getElementById(idPreg).appendChild(useranswer);
-=======
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
+		if(multiple.options[i].selected){
 			for (var j = 0; j<respuestas.length; j++){
-				if (multiple.options[i].value == respuestas[j]){
+				if(multiple.options[i].value == respuestas[j]){
 					escorrecta.push(multiple.options[i].value);
 				}
 			}
@@ -331,11 +259,7 @@ function corregirMultiple(id, respuestas, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: " + puntuacion.toFixed(1) + " puntos")
 	} else if (puntuacion == 0){
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
-<<<<<<< HEAD
-	}else darRespuestaHtml(numPreg + " pregunta: 1 punto");
-=======
-	}else darRespuestaHtml(numPreg + " pregunta: 1 punto")
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
+	} else darRespuestaHtml(numPreg + " pregunta: 1 punto")
 }
 //****************************************************************************************************
 //							poner los datos recibios en el HTML	
@@ -422,20 +346,7 @@ function tituloCorreccion(){
 	darRespuestaHtml("Puntuaci\u00F3n obtenida por pregunta:");
 }
 function presentarNota(){
-	//Código transformación xslt con xmlDoc y xslDoc
-	if (document.implementation && document.implementation.createDocument) {
-		xsltProcessor = new XSLTProcessor();
-		xsltProcessor.importStylesheet(xslDoc);
-		resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
-		document.getElementById('resultadoTotal').appendChild(resultDocument);
-	}
 	darRespuestaTotal("Puntuación total: "+ nota.toFixed(2));	
-	//bloquear formulario (recargar para volver a empezar)
-	var f=formElement;
-	var e = f.elements;
-	for (var i = 0, len = e.length; i < len; ++i) {
-		e[i].disabled = true;
-	}
 }
 //	inicializar la corrección
 function inicializar(){
@@ -481,11 +392,7 @@ function comprobar(){
 		return false;
 	} else if (document.getElementById("selectMultiple").selectedIndex == -1){
 		alert("Responde la 5ª pregunta");
-<<<<<<< HEAD
 		document.getElementById("tituloMultiple").scrollIntoView();
-=======
-		document.getElementById("selectMultiple").scrollIntoView();
->>>>>>> ad3aa9fa91a1da0261b0e7f6fee3555a1811690e
 		return false;
 	} else 	if (document.getElementById("text2").value == "") {
 		document.getElementById("text2").focus();
