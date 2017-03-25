@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<?xml-stylesheet type="text/xsl" href="questions.xsl"?>
 
 <!-- !DOCTYPE questions SYSTEM "preguntas.dtd"!-->
-<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='preguntas.xsd'>
+<!--questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='preguntas.xsd'!-->
+<questions>
 	<question id="quest001">
 		<type>text</type>
 		<title>¿Cual es el protocolo de seguridad utilizado en las paginas web?</title>
