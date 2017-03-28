@@ -13,11 +13,11 @@
                 <h2>Corrección</h2>
   <table>
     <tr>
-      <th>Pregunta</th>
-      <th>Opción</th>
-      <th>Respuesta</th>
+      <th>Preguntas</th>
+      <th>Opciones</th>
+      <th>Respuestas</th>
     </tr>
-    <xsl:for-each select="questions/question">      
+    <xsl:for-each select="questions/question">
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td>
@@ -26,7 +26,7 @@
          <xsl:when test="../type = 'text'">
           <span><xsl:value-of select="text()"/></span>
          </xsl:when>
-        </xsl:choose>         
+        </xsl:choose>
        </xsl:for-each>
        <xsl:for-each select="option">
          <xsl:variable name="optposition" select="position()-1"/>
@@ -54,6 +54,18 @@
               <span id="x">&#x2715;</span>
             </xsl:if>
            </xsl:when>
+           <xsl:when test="../type = 'select multiple'">
+            <xsl:variable name="correctanswermul" select="text()+1"/>
+            <xsl:if test="$useranswer=$correctanswermul">
+              <span>&#x2713;</span>
+            </xsl:if>
+           </xsl:when>
+           <xsl:when test="../type = 'checkbox'">
+            <xsl:variable name="correctanswercheck" select="text()+1"/>
+            <xsl:if test="$useranswer=$correctanswercheck">
+              <span>&#x2713;</span>
+            </xsl:if>
+           </xsl:when>
            <xsl:otherwise>
             <xsl:variable name="correctanswer" select="text()+1"/>
            <xsl:if test="$useranswer=$correctanswer">
@@ -63,13 +75,13 @@
               <span id="x">&#x2715;</span>
             </xsl:if>
            </xsl:otherwise>
-          </xsl:choose>
+         </xsl:choose>
          </xsl:for-each>
          <!--<xsl:if test="$count=1">
            <span id='x'>&#x2715;</span>
          </xsl:if> -->
          <br/><br/>
-       </xsl:for-each>       
+       </xsl:for-each>
      </td>
     </tr>
     </xsl:for-each>

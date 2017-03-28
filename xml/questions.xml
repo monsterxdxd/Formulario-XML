@@ -41,9 +41,9 @@
 		<option>Hexadecimal</option>
 		<option>Mediante el nombre del color</option>
 		<option>Binario</option>
+		<answer>0</answer>
 		<answer>1</answer>
 		<answer>2</answer>
-		<answer>3</answer>
 	</question>
 	<question id="quest006">
 		<type>text</type>
@@ -85,8 +85,8 @@
 		<option>C) ÷</option>
 		<option>D) %</option>
 		<option>E) ++</option>
-		<answer>1</answer>
+		<answer>0</answer>
+		<answer>3</answer>
 		<answer>4</answer>
-		<answer>5</answer>
 	</question>
 </questions>

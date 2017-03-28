@@ -14,7 +14,7 @@
 		<option>Cascading Style Sheet</option>
 		<option>Concatening Style Sheet</option>
 		<option>Coworking on Style Sheet</option>
-		<answer>0</answer>
+		<answer>1</answer>
 	</question>
 	<question id="quest003">
 		<type>checkbox</type>
@@ -22,8 +22,8 @@
 		<option>nuevaVariable = true;</option>
 		<option>public boolean nuevaVariable = true;</option>
 		<option>var nuevaVariable = true;</option>
-		<answer>0</answer>
 		<answer>1</answer>
+		<answer>2</answer>
 	</question>
 	<question id="quest004">
 		<type>radio</type>
@@ -31,7 +31,7 @@
 		<option>Hola</option>
 		<option>Adiós</option>
 		<option>No se mostrará nada</option>
-		<answer>1</answer>
+		<answer>2</answer>
 	</question>
 	<question id="quest005">
 		<type>select multiple</type>
@@ -57,7 +57,7 @@
 		<option>fixed</option>
 		<option>floating</option>
 		<option>absolute</option>
-		<answer>3</answer>
+		<answer>4</answer>
 	</question>
 	<question id="quest008">
 		<type>checkbox</type>
@@ -66,7 +66,7 @@
 		<option>width: 500px;</option>
 		<option>width: 100%;</option>
 		<option>anchura: 100%;</option>
-		<answer>2</answer>
+		<answer>3</answer>
 	</question>
 	<question id="quest009">
 		<type>radio</type>
@@ -74,7 +74,7 @@
 		<option>background-image: src='../img/fondo.png';</option>
 		<option>background: image-url='../img/fondo.png';</option>
 		<option>background-image: url('../img/fondo.png');</option>
-		<answer>2</answer>
+		<answer>3</answer>
 	</question>
 	<question id="quest010">
 		<type>select multiple</type>

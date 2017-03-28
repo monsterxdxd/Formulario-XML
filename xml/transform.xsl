@@ -5,22 +5,31 @@
 <xsl:template match="/">
 <html>
 <head>
-<style rel="stylesheet" type="text/css">
+<style rel="stylesheet" type="text/css" media="screen and (min-width:721px)">
 body{background-color:#B2EBF2;font-size: 1.3vw;}
-h2{margin-left:10%;color:#00838F;margin-top:2%;}
+h2{color:#00838F;margin-top:2%;text-align:center}
 table{width:80%;margin-left:10%;border-radius:10px 10px 10px 10px;border:3px solid;color:#B2EBF2}
 th{background-color:#00838F;color:#E0F7FA;}
 td{background-color:#00ACC1;}
 td,tr,th{border-radius:12px 12px 12px 12px;border:5px solid;border-color:#B2EBF2;padding:8px;vertical-align:top}
 </style>
+<style rel="stylesheet" type="text/css" media="screen and (max-width:720px)">
+body{background-color:#B2EBF2}
+h2{color:#00838F;margin-top:2%;text-align:center}
+table{width:99%;border:0px;color:#B2EBF2;font-size:4vw;}
+th{background-color:#00838F;color:#E0F7FA;}
+td{background-color:#00ACC1;}
+td,tr,th{border-radius:12px 12px 12px 12px;border:2px solid;border-color:#B2EBF2;padding:3px;vertical-align:top}
+</style>
+
 </head>
   <body>
-  <h2>Questions</h2>
+  <h2>Preguntas</h2>
   <table border="1">
-    <tr bgcolor="#cdd8f6">
-      <th>Title</th>
-      <th>Option</th>
-      <th>Answer</th>
+    <tr>
+      <th>Titulo</th>
+      <th>Opciones</th>
+      <th>Correctas</th>
     </tr>
     <xsl:for-each select="questions/question">
     <tr>
@@ -33,7 +42,7 @@ td,tr,th{border-radius:12px 12px 12px 12px;border:5px solid;border-color:#B2EBF2
       <td>
        <xsl:for-each select="answer">
         <xsl:value-of select="text()"/><br/>
-       </xsl:for-each>       
+       </xsl:for-each>
       </td>
     </tr>
     </xsl:for-each>
