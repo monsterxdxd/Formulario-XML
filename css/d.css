@@ -52,7 +52,7 @@ form{
 	position: relative;
 	margin-left: 25%;
 	background: #00838F;
-	text-align: center;	
+	text-align: center;
 	color: #B2EBF2;
 	border-radius: 10px 10px 10px 10px;
 	font-family: sans-serif ;
@@ -78,7 +78,7 @@ form{
 	border-radius: 10px 10px 10px 10px;
 	position: relative;
 	height: 25%;
-	background-color: #AFEEEE;	
+	background-color: #AFEEEE;
 	margin: 2%;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -113,5 +113,3 @@ th{
 	background-color:#00838F;
 	color:#E0F7FA;
 }
-	
-
